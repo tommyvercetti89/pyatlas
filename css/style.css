@@ -366,6 +366,7 @@ code, kbd, pre {
   height: 34px;
   display: block;
   flex-shrink: 0;
+  border-radius: 9px;
   filter: drop-shadow(0 2px 8px var(--accent-glow));
 }
 
@@ -2672,7 +2673,7 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   gap: 1rem;
 }
-.boot-logo svg, .boot-logo i {
+.boot-logo img, .boot-logo svg, .boot-logo i {
   display: block;
   border-radius: 14px;
   animation: pulseLogo 1.6s ease-in-out infinite alternate;
