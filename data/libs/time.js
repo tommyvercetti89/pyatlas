@@ -384,3 +384,4 @@ print("Olcumler tamamlandi mi:", sure_erken >= 0 and sure_gec >= 0 and sure_sabi
     ]
   });
 })();
+

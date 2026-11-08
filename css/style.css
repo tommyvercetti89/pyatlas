@@ -181,6 +181,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   font-size: calc(16px * var(--fs, 1));
   scroll-behavior: smooth;
@@ -2379,6 +2383,11 @@ h1, h2, h3, h4, h5 {
    SEARCH OVERLAY & MODAL
    ========================================================================== */
 
+/* Global hidden reset */
+[hidden] {
+  display: none !important;
+}
+
 .search-ov {
   position: fixed;
   inset: 0;
@@ -2391,10 +2400,17 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
   padding: 3.5rem 1.25rem;
   opacity: 0;
-  transition: opacity 0.2s var(--ease-smooth);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease-smooth), visibility 0.2s;
 }
 .search-ov.on {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.search-ov[hidden] {
+  display: none !important;
 }
 
 .search-box {
@@ -2618,3 +2634,4 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
+

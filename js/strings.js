@@ -1,7 +1,7 @@
 /* PyAtlas UI Translations (Turkish / English) */
 (function () {
   'use strict';
-  window.PY = window.PY || {};
+  const PY = window.PY = window.PY || {};
   PY.strings = {
     tr: {
       'skip': 'İçeriğe geç',
@@ -384,3 +384,4 @@
     }
   };
 })();
+

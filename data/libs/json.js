@@ -414,3 +414,4 @@ print(cikis[:45])  # Ilk birkac satiri goster ||| Show first lines`,
     ]
   });
 })();
+

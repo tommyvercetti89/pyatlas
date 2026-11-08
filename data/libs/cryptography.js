@@ -418,3 +418,4 @@ print("Manipulasyon girisimi engellendi mi:", yakalandi)`,
     ]
   });
 })();
+

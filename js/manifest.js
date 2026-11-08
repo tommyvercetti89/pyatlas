@@ -1,6 +1,7 @@
 /* Library registry. Add an id here and create data/libs/<id>.js to add a library. Order = display order. */
 (function () {
-  window.PY = window.PY || {};
+  'use strict';
+  const PY = window.PY = window.PY || {};
   PY.manifest = [
     // basics
     'builtins', 'sys', 'os', 'pathlib', 'shutil',

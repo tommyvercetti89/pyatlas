@@ -43,16 +43,16 @@
     </a>
     <nav class="topnav" aria-label="Main" id="topnav"></nav>
     <div class="top-actions">
-      <button class="icon-btn" id="btn-search" data-i18n-aria="search" aria-label="Ara"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><kbd class="kbd">/</kbd></button>
+      <button class="icon-btn" id="btn-search" data-act="open-search" data-i18n-aria="search" aria-label="Ara"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><kbd class="kbd">/</kbd></button>
       <div class="seg" role="group" data-i18n-aria="language" aria-label="Dil">
-        <button data-lang="tr" aria-pressed="false">TR</button>
-        <button data-lang="en" aria-pressed="false">EN</button>
+        <button data-lang="tr" data-act="lang" data-v="tr" aria-pressed="false">TR</button>
+        <button data-lang="en" data-act="lang" data-v="en" aria-pressed="false">EN</button>
         <i class="seg-pill"></i>
       </div>
       <div class="themes" role="group" data-i18n-aria="theme" aria-label="Tema">
-        <button data-theme-btn="light" class="sw sw-light" data-i18n-aria="theme.light" aria-label="Açık" aria-pressed="false"><span></span></button>
-        <button data-theme-btn="purple" class="sw sw-purple" data-i18n-aria="theme.purple" aria-label="Mor" aria-pressed="false"><span></span></button>
-        <button data-theme-btn="dark" class="sw sw-dark" data-i18n-aria="theme.dark" aria-label="Karanlık" aria-pressed="false"><span></span></button>
+        <button data-theme-btn="light" data-act="theme" data-v="light" class="sw sw-light" data-i18n-aria="theme.light" aria-label="Açık" aria-pressed="false"><span></span></button>
+        <button data-theme-btn="purple" data-act="theme" data-v="purple" class="sw sw-purple" data-i18n-aria="theme.purple" aria-label="Mor" aria-pressed="false"><span></span></button>
+        <button data-theme-btn="dark" data-act="theme" data-v="dark" class="sw sw-dark" data-i18n-aria="theme.dark" aria-label="Karanlık" aria-pressed="false"><span></span></button>
       </div>
     </div>
   </header>
@@ -66,7 +66,7 @@
       <div class="search-in">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <input id="search-input" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" data-i18n-ph="search.ph" placeholder="Kütüphane, metod, sabit ara…">
-        <button class="icon-btn sm" id="search-close" data-i18n-aria="close" aria-label="Kapat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <button class="icon-btn sm" id="search-close" data-act="close-search" data-i18n-aria="close" aria-label="Kapat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
       <div class="search-res" id="search-res" role="listbox"></div>
     </div>

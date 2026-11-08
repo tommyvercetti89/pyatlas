@@ -398,3 +398,4 @@ print(f"Islem: {args.dosya} dosyasi {args.algo.upper()} ile ozetlenecek.")`,
     ]
   });
 })();
+

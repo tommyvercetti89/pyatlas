@@ -1,6 +1,7 @@
 /* Learning paths: ordered lists of library ids */
 (function () {
-  window.PY = window.PY || {};
+  'use strict';
+  const PY = window.PY = window.PY || {};
   PY.paths = [
     {
       id: 'refresh',

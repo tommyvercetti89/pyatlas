@@ -1,7 +1,9 @@
 /* PyAtlas core: namespace, i18n engine, store, rich text, highlighter, SRS, card builder */
+var PY;
 (function () {
   'use strict';
-  const PY = (window.PY = window.PY || {});
+  PY = window.PY = window.PY || {};
+  if (typeof globalThis !== 'undefined') globalThis.PY = PY;
   PY.libs = [];
   PY.addLib = (l) => PY.libs.push(l);
   PY.strings = PY.strings || { tr: {}, en: {} };

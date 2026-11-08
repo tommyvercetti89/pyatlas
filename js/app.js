@@ -532,7 +532,7 @@
       if (r.sub) {
         const m = PY.members(l).find((x) => x.id === r.sub);
         if (m) {
-          const el = $('#m-' + CSS.escape(l.id) + '-' + CSS.escape(m.id));
+          const el = document.getElementById('m-' + l.id + '-' + m.id);
           if (el) {
             toggleMem(el, true, true);
             if (opts.fresh) setTimeout(() => { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); el.classList.add('flash'); }, 120);
@@ -711,9 +711,9 @@
   }
   function bootFromStore() {
     const d = ST();
-    const lg = d.lang || (navigator.language || 'tr').toLowerCase().startsWith('tr') ? 'tr' : 'en';
-    const lang = d.lang || lg;
-    const theme = d.theme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    const defaultLang = ((navigator.language || 'tr').toLowerCase().startsWith('tr')) ? 'tr' : 'en';
+    const lang = d.lang || defaultLang;
+    const theme = d.theme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     applyTheme(theme);
     applyFont(d.font || 1);
     applyLang(lang, false);
@@ -767,6 +767,7 @@
       case 'font': store.set('font', +a.dataset.v); applyFont(+a.dataset.v); render(); break;
       case 'session': store.set('session', +a.dataset.v); sess = null; render(); break;
       case 'open-search': openSearch(); break;
+      case 'close-search': closeSearch(); break;
       case 'export': exportData(); break;
       case 'reset': if (confirm(s('set.reset.confirm'))) { store.reset(); sess = null; bootFromStore(); toast(s('toast.reset')); render({ fresh: true }); } break;
       case 'install':
@@ -804,7 +805,7 @@
   $('#search-input').addEventListener('input', (e) => doSearch(e.target.value));
   $('#search-close').addEventListener('click', closeSearch);
   $('#btn-search').addEventListener('click', openSearch);
-  $('#search').addEventListener('mousedown', (e) => { if (e.target.id === 'search') closeSearch(); });
+  $('#search').addEventListener('click', (e) => { if (e.target.id === 'search') closeSearch(); });
   $('#search-res').addEventListener('click', (e) => { if (e.target.closest('.s-it')) setTimeout(closeSearch, 0); });
   $$('[data-lang]').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
   $$('[data-theme-btn]').forEach((b) => b.addEventListener('click', () => setTheme(b.dataset.themeBtn)));
@@ -825,17 +826,24 @@
     });
   }
   async function boot() {
-    store.load();
-    bootFromStore();
-    await Promise.all(PY.manifest.map(loadLib));
-    PY.libs.sort((a, b) => PY.manifest.indexOf(a.id) - PY.manifest.indexOf(b.id));
-    PY.buildCards();
-    store.set('lang', PY.lang());
-    if (!ST().theme) store.set('theme', document.documentElement.getAttribute('data-theme'));
-    render({ fresh: true });
-    const boot = $('#boot');
-    boot.classList.add('out');
-    setTimeout(() => boot.remove(), 500);
+    try {
+      store.load();
+      bootFromStore();
+      await Promise.all(PY.manifest.map(loadLib));
+      PY.libs.sort((a, b) => PY.manifest.indexOf(a.id) - PY.manifest.indexOf(b.id));
+      PY.buildCards();
+      store.set('lang', PY.lang());
+      if (!ST().theme) store.set('theme', document.documentElement.getAttribute('data-theme'));
+      render({ fresh: true });
+    } catch (err) {
+      console.error('Boot error:', err);
+    } finally {
+      const bootEl = $('#boot');
+      if (bootEl) {
+        bootEl.classList.add('out');
+        setTimeout(() => bootEl.remove(), 500);
+      }
+    }
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
       const had = !!navigator.serviceWorker.controller;
       navigator.serviceWorker.register('sw.js').catch(() => {});
