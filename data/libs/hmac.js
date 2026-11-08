@@ -11,8 +11,8 @@
     cat: "crypto",
     docs: "https://docs.python.org/3/library/hmac.html",
     tagline: [
-      "Gizli anahtarla mesaj doğrulama (HMAC) — veri bütünlüğü ve zamanlama saldırılarına karşı güvenli karşılaştırma.",
-      "Keyed-hashing for message authentication (HMAC) — data integrity and timing-attack-safe comparison."
+      "Gizli anahtarla mesaj doğrulama (HMAC): veri bütünlüğü ve zamanlama saldırılarına karşı güvenli karşılaştırma.",
+      "Keyed-hashing for message authentication (HMAC): data integrity and timing-attack-safe comparison."
     ],
     analogy: [
       "`hashlib` mühürsüz bir parmak izi gibidir: herkes verinin özetini çıkarabilir. `hmac` ise parmak izinin içine gizli bir mühür (özel anahtar) katar. Mesajı yolda değiştiren biri gizli anahtarı bilmediği için geçerli bir HMAC mührü üretemez. Böylece alıcı hem mesajın bozulmadığını hem de gerçekten güvenilir taraftan geldiğini anlar.",

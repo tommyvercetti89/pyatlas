@@ -11,8 +11,8 @@
     cat: "basics",
     docs: "https://docs.python.org/3/library/shutil.html",
     tagline: [
-      "Yüksek seviyeli dosya ve dizin yönetimi — kopyalama, taşıma, arşivleme ve sistem komutu konumu bulma.",
-      "High-level file and directory operations — copying, moving, archiving, and system command location."
+      "Yüksek seviyeli dosya ve dizin yönetimi: kopyalama, taşıma, arşivleme ve sistem komutu konumu bulma.",
+      "High-level file and directory operations: copying, moving, archiving, and system command location."
     ],
     analogy: [
       "`os` ve `pathlib` sana tek tek tuğlaları verir (dosya adı değiştirme, izin okuma). `shutil` ise kepçe ve nakliye kamyonu gibidir: koca bir klasör ağacını tek hamlede kopyalar, taşır, zip arşivi yapar veya diskin doluluk oranını ölçer.",

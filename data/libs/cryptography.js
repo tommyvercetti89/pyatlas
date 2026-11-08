@@ -12,8 +12,8 @@
     cat: "crypto",
     docs: "https://cryptography.io/",
     tagline: [
-      "Modern ve endüstri standardı kriptografi — Fernet simetrik şifreleme, AES-GCM, RSA ve PBKDF2.",
-      "Modern production cryptography — Fernet symmetric encryption, AES-GCM, RSA, and PBKDF2 key derivation."
+      "Modern ve endüstri standardı kriptografi: Fernet simetrik şifreleme, AES-GCM, RSA ve PBKDF2.",
+      "Modern production cryptography: Fernet symmetric encryption, AES-GCM, RSA, and PBKDF2 key derivation."
     ],
     analogy: [
       "`hashlib` tek yönlü bir parmak izidir (asla geri açılamaz). `cryptography` ise gerçek bir çelik kasa ve anahtardır: Gizli bir veriyi şifreler (kilitler), anahtarı olan kişi ise veriyi orijinal haline geri çözer (açar). Şifreli metne tek bir bayt bile eklense veya değiştirilse, kasa kendini kilitler ve sahte veriyi açmayı reddeder (kimlik doğrulamalı şifreleme).",

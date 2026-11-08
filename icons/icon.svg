@@ -1,37 +1,80 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0e14"/>
-      <stop offset="50%" stop-color="#111622"/>
-      <stop offset="100%" stop-color="#161c2b"/>
+    <!-- Background Gradient -->
+    <linearGradient id="pyatlas-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1422"/>
+      <stop offset="50%" stop-color="#0b0e17"/>
+      <stop offset="100%" stop-color="#06080e"/>
     </linearGradient>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="50%" stop-color="#a855f7"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
+
+    <!-- Outer Border Glow Gradient -->
+    <linearGradient id="pyatlas-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.8"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="16" result="blur"/>
+
+    <!-- Python Upper Ribbon (Indigo -> Violet) -->
+    <linearGradient id="py-upper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="30%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+
+    <!-- Python Lower Ribbon (Cyan -> Teal) -->
+    <linearGradient id="py-lower" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="40%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <!-- Core Radial Glow -->
+    <radialGradient id="py-radial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filter Glow -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
   </defs>
-  <!-- Background Rounded Squircle -->
-  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <rect width="508" height="508" x="2" y="2" rx="110" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
-  
-  <!-- Subtle cyber circuit ring -->
-  <circle cx="256" cy="256" r="180" fill="none" stroke="rgba(99,102,241,0.18)" stroke-width="4" stroke-dasharray="14 10"/>
-  <circle cx="256" cy="256" r="210" fill="none" stroke="rgba(6,182,212,0.15)" stroke-width="2"/>
-  
-  <!-- Main Glowing Center Symbol: Stylized Code & Python Shield -->
-  <g filter="url(#glow)">
-    <!-- Left bracket < -->
-    <path d="M190 170 L96 256 L190 342" fill="none" stroke="url(#grad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Right bracket > -->
-    <path d="M322 170 L416 256 L322 342" fill="none" stroke="url(#grad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Central Shield / Core Node -->
-    <circle cx="256" cy="256" r="28" fill="#06b6d4"/>
-    <circle cx="256" cy="256" r="14" fill="#ffffff"/>
+
+  <!-- Squircle App Container -->
+  <rect width="512" height="512" rx="116" fill="url(#pyatlas-bg)"/>
+  <rect width="506" height="506" x="3" y="3" rx="114" fill="none" stroke="url(#pyatlas-border)" stroke-width="3"/>
+  <circle cx="256" cy="256" r="220" fill="url(#py-radial)"/>
+
+  <!-- Orbital Cyber Rings -->
+  <circle cx="256" cy="256" r="184" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" stroke-dasharray="6 8"/>
+  <circle cx="256" cy="256" r="148" fill="none" stroke="rgba(99,102,241,0.18)" stroke-width="2"/>
+
+  <!-- Compass Cardinal Ticks -->
+  <line x1="256" y1="52" x2="256" y2="68" stroke="rgba(6,182,212,0.6)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="256" y1="444" x2="256" y2="460" stroke="rgba(99,102,241,0.6)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="52" y1="256" x2="68" y2="256" stroke="rgba(99,102,241,0.6)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="444" y1="256" x2="460" y2="256" stroke="rgba(6,182,212,0.6)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Interlocking Cyber Python Emblem -->
+  <g filter="url(#neon-glow)">
+    <!-- Upper Python Track -->
+    <path d="M 256,116 C 188,116 156,148 156,204 L 156,232 C 156,254 172,272 194,272 L 298,272 C 318,272 334,288 334,308 L 334,336 C 334,372 308,392 268,392 L 244,392 C 234,392 226,384 226,374 C 226,364 234,356 244,356 L 268,356 C 288,356 298,346 298,332 L 298,308 C 298,286 282,268 260,268 L 194,268 C 152,268 120,236 120,194 C 120,132 168,80 256,80 L 292,80 C 316,80 336,100 336,124 L 336,160 C 336,170 328,178 318,178 C 308,178 300,170 300,160 L 300,124 C 300,119 297,116 292,116 Z" fill="url(#py-upper)"/>
+    
+    <!-- Upper Eye Node -->
+    <circle cx="212" cy="154" r="14" fill="#ffffff"/>
+    <circle cx="212" cy="154" r="7" fill="#06b6d4"/>
+
+    <!-- Lower Python Track (180-deg rotated harmonic) -->
+    <path d="M 256,396 C 324,396 356,364 356,308 L 356,280 C 356,258 340,240 318,240 L 214,240 C 194,240 178,224 178,204 L 178,176 C 178,140 204,120 244,120 L 268,120 C 278,120 286,128 286,138 C 286,148 278,156 268,156 L 244,156 C 224,156 214,166 214,180 L 214,204 C 214,226 230,244 252,244 L 318,244 C 360,244 392,276 392,318 C 392,380 344,432 256,432 L 220,432 C 196,432 176,412 176,388 L 176,352 C 176,342 184,334 194,334 C 204,334 212,342 212,352 L 212,388 C 212,393 215,396 220,396 Z" fill="url(#py-lower)"/>
+    
+    <!-- Lower Eye Node -->
+    <circle cx="300" cy="358" r="14" fill="#ffffff"/>
+    <circle cx="300" cy="358" r="7" fill="#6366f1"/>
+
+    <!-- Center Navigation Spark (Diamond Node) -->
+    <polygon points="256,242 268,256 256,270 244,256" fill="#ffffff" opacity="0.95"/>
+    <circle cx="256" cy="256" r="3" fill="#38bdf8"/>
   </g>
 </svg>
-

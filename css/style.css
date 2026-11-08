@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PyAtlas Stylesheet — Modern, Charismatic, Cyber-Aesthetic Design System
+   PyAtlas Stylesheet: Modern, Charismatic, Cyber-Aesthetic Design System
    3 Themes: Dark (default), Purple (Cyber Neon), Light (Clean Editorial)
    ========================================================================== */
 
@@ -2672,17 +2672,14 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   gap: 1rem;
 }
-.boot-logo i {
+.boot-logo svg, .boot-logo i {
   display: block;
-  width: 48px;
-  height: 48px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
   animation: pulseLogo 1.6s ease-in-out infinite alternate;
 }
 @keyframes pulseLogo {
-  0% { transform: scale(0.9); box-shadow: 0 0 10px rgba(99, 102, 241, 0.4); }
-  100% { transform: scale(1.1); box-shadow: 0 0 30px rgba(6, 182, 212, 0.7); }
+  0% { transform: scale(0.95); filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.4)); }
+  100% { transform: scale(1.05); filter: drop-shadow(0 0 26px rgba(6, 182, 212, 0.7)); }
 }
 .boot-in p {
   font-family: var(--font-display);

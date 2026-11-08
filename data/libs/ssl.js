@@ -11,8 +11,8 @@
     cat: "network",
     docs: "https://docs.python.org/3/library/ssl.html",
     tagline: [
-      "TLS/SSL şifreleme katmanı — soketleri güvenli hale getirme, sertifika analizi ve Ortadaki Adam (MITM) savunması.",
-      "TLS/SSL encryption layer — socket wrapping, certificate inspection, and Man-in-the-Middle (MITM) defense."
+      "TLS/SSL şifreleme katmanı: soketleri güvenli hale getirme, sertifika analizi ve Ortadaki Adam (MITM) savunması.",
+      "TLS/SSL encryption layer: socket wrapping, certificate inspection, and Man-in-the-Middle (MITM) defense."
     ],
     analogy: [
       "`socket` çıplak bir telefon kablosu gibidir: aradaki herkes hatta girip konuşulanları dinleyebilir (sniffing) veya değiştirebilir. `ssl` ise bu kabloya askeri düzeyde kırılmaz bir şifreli tünel (TLS) giydirir. Karşı tarafın kimlik kartını (dijital sertifika) doğrulamadan tünelden tek bir veri geçişine bile izin vermez.",

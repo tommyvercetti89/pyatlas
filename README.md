@@ -1,10 +1,10 @@
-# 🐍 PyAtlas — Python & Siber Güvenlik Kütüphane Atlası (PWA)
+# PyAtlas: Python & Siber Güvenlik Kütüphane Atlası (PWA)
 
 > **GitHub Pages Uyumlu, Çevrimdışı Çalışabilen (PWA), Aralıklı Tekrar (SM-2) ve İki Dilli (TR / EN) İnteraktif Kütüphane Rehberi.**
 
 ---
 
-## 🌟 Neden PyAtlas?
+## Neden PyAtlas?
 
 Python öğrenirken veya siber güvenlik lablarına girerken en büyük engel şudur: **Kütüphaneler ve metotların metotları** ("methods of methods") gözde büyür, karmaşıklaşır ve pratik yapmadıkça unutulur.
 
@@ -17,22 +17,22 @@ ile tane tane öğreterek akılda kalıcı hale getirir.
 
 ---
 
-## ✨ Özellikler
+## Özellikler
 
-- 📱 **Mobil & Masaüstü PWA:** Telefona tek tıkla uygulama gibi yüklenir (`manifest.webmanifest`, `ServiceWorker`), uçak modunda ve çevrimdışı tamamen çalışır.
-- 🎨 **3 Dinamik Tema:** 
-  - 🌙 **Dark (Karanlık):** OLED dostu, göz yormayan derin gri/siyah.
-  - 💜 **Purple (Cyber Neon):** Siber güvenlik ve fütüristik mor/neon estetiği.
-  - ☀️ **Light (Açık):** Gündüz ortamları için yüksek kontrastlı net okuma modu.
-- 🌐 **Anında İki Dilli Destek (TR 🇹🇷 / EN 🇬🇧):** Arayüz, açıklamalar ve kod yorumları (`# tr ||| en`) tek tuşla anında dilden dile dönüşür.
-- 🧠 **Aralıklı Tekrar (SM-2 Spaced Repetition):** Anki ve SuperMemo algoritmalarıyla çalışan bilgi kartları (flashcards). Hatırlama zorluğuna göre (1: Tekrar, 2: Zor, 3: İyi, 4: Kolay) kartları ideal günlerde tekrar karşına çıkarır.
-- 🛡️ **Defensive & Ethical Lab Odaklı:** Port tarama, banner yakalama, log inceleme, zamanlama saldırısı savunması, token yönetimi, paket ayrıştırma ve formül enjeksiyonu koruması.
-- ⚡ **Sıfır Derleme (Zero Build Step):** Vanilla HTML5, CSS3 ve ES6. GitHub Pages veya herhangi bir statik sunucuda anında çalışır.
-- 🔍 **Canlı Arama & Kısayol (`/`):** İstediğin metodu veya kütüphaneyi klavyeden `/` tuşuna basarak anında bul.
+- **Mobil & Masaüstü PWA:** Telefona tek tıkla uygulama gibi yüklenir (`manifest.webmanifest`, `ServiceWorker`), uçak modunda ve çevrimdışı tamamen çalışır.
+- **3 Dinamik Tema:** 
+  - **Dark (Karanlık):** OLED dostu, göz yormayan derin gri/siyah.
+  - **Purple (Cyber Neon):** Siber güvenlik ve fütüristik mor/neon estetiği.
+  - **Light (Açık):** Gündüz ortamları için yüksek kontrastlı net okuma modu.
+- **Anında İki Dilli Destek (TR TR / EN EN):** Arayüz, açıklamalar ve kod yorumları (`# tr ||| en`) tek tuşla anında dilden dile dönüşür.
+- **Aralıklı Tekrar (SM-2 Spaced Repetition):** Anki ve SuperMemo algoritmalarıyla çalışan bilgi kartları (flashcards). Hatırlama zorluğuna göre (1: Tekrar, 2: Zor, 3: İyi, 4: Kolay) kartları ideal günlerde tekrar karşına çıkarır.
+- **Defensive & Ethical Lab Odaklı:** Port tarama, banner yakalama, log inceleme, zamanlama saldırısı savunması, token yönetimi, paket ayrıştırma ve formül enjeksiyonu koruması.
+- **Sıfır Derleme (Zero Build Step):** Vanilla HTML5, CSS3 ve ES6. GitHub Pages veya herhangi bir statik sunucuda anında çalışır.
+- **Canlı Arama & Kısayol (`/`):** İstediğin metodu veya kütüphaneyi klavyeden `/` tuşuna basarak anında bul.
 
 ---
 
-## 📚 Kapsanan Kütüphaneler (34 Flagship Modül)
+## Kapsanan Kütüphaneler (34 Flagship Modül)
 
 ### 1. Temel Sistem & Dosya Yönetimi (Basics & Files)
 - **`builtins`**: Python dahili fonksiyonları (`len`, `zip`, `enumerate`, `isinstance`, `map`, `filter`, `open`, vb.)
@@ -82,7 +82,7 @@ ile tane tane öğreterek akılda kalıcı hale getirir.
 
 ---
 
-## 🚀 Yerel Olarak Çalıştırma
+## Yerel Olarak Çalıştırma
 
 Projeyi bilgisayarınızda yerel olarak açmak için herhangi bir HTTP sunucusu yeterlidir:
 
@@ -95,11 +95,11 @@ python -m http.server 8080
 ```
 
 Tarayıcınızda açın:
-👉 **`http://localhost:8080`**
+**`http://localhost:8080`**
 
 ---
 
-## 🌐 GitHub Pages'e Yükleme (Adım Adım)
+## GitHub Pages'e Yükleme (Adım Adım)
 
 1. GitHub'da yeni bir repository (depo) oluşturun (örneğin: `pyatlas`).
 2. Proje dizininde terminalden şu komutları çalıştırın:
@@ -117,11 +117,11 @@ git push -u origin main
    - **Branch** olarak `main` ve klasör olarak `/ (root)` seçin.
    - **Save** butonuna tıklayın.
 4. Birkaç saniye içinde siteniz yayına alınacaktır:
-   👉 **`https://<kullanici-adiniz>.github.io/pyatlas/`**
+   **`https://<kullanici-adiniz>.github.io/pyatlas/`**
 
 ---
 
-## 🧪 Test ve Doğrulama Araçları
+## Test ve Doğrulama Araçları
 
 Projeye dahil edilen test araçları tüm kod örneklerinin çalışabilirliğini doğrular:
 
@@ -135,6 +135,6 @@ python tools/run_examples.py
 
 ---
 
-## 📄 Lisans
+## Lisans
 Bu proje eğitim ve etik siber güvenlik araştırmaları için MIT lisansı altında hazırlanmıştır.
 

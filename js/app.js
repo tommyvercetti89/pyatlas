@@ -453,7 +453,7 @@
       <section class="card reveal"><h3>${esc(s('set.session'))}</h3><p class="muted">${esc(s('set.session.d'))}</p><div class="opts four">
         ${[10, 15, 25, 40].map((n) => `<button class="opt${ST().session === n ? ' on' : ''}" data-act="session" data-v="${n}"><b>${n}</b></button>`).join('')}</div></section>
       <section class="card reveal"><h3>${esc(s('set.install'))}</h3>
-        ${isStandalone() ? `<p>${esc(s('install.done'))}</p>` : deferredInstall ? `<p class="muted">${esc(s('install.d'))}</p><button class="btn primary" data-act="install">${ic('download')}${esc(s('install.btn'))}</button>` : `<p class="muted">${esc(s('install.manual'))}</p><ul class="how-install"><li><b>Android · Chrome</b> — ${esc(s('install.android'))}</li><li><b>iPhone · Safari</b> — ${esc(s('install.ios'))}</li></ul>`}
+        ${isStandalone() ? `<p>${esc(s('install.done'))}</p>` : deferredInstall ? `<p class="muted">${esc(s('install.d'))}</p><button class="btn primary" data-act="install">${ic('download')}${esc(s('install.btn'))}</button>` : `<p class="muted">${esc(s('install.manual'))}</p><ul class="how-install"><li><b>Android · Chrome</b>: ${esc(s('install.android'))}</li><li><b>iPhone · Safari</b>: ${esc(s('install.ios'))}</li></ul>`}
       </section>
       <section class="card reveal"><h3>${esc(s('set.data'))}</h3><p class="muted">${esc(s('set.data.d'))}</p>
         <div class="row"><button class="btn ghost" data-act="export">${ic('download')}${esc(s('set.export'))}</button><label class="btn ghost file">${ic('upload')}${esc(s('set.import'))}<input id="import-file" type="file" accept="application/json,.json" hidden></label><button class="btn danger" data-act="reset">${ic('trash')}${esc(s('set.reset'))}</button></div></section>

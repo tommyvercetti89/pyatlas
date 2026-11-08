@@ -11,8 +11,8 @@
     cat: "basics",
     docs: "https://docs.python.org/3/library/collections.html",
     tagline: [
-      "Özel ve yüksek performanslı veri yapıları — sayaçlar, çift uçlu kuyruklar ve varsayılan sözlükler.",
-      "High-performance container datatypes — counters, double-ended queues, and default dictionaries."
+      "Özel ve yüksek performanslı veri yapıları: sayaçlar, çift uçlu kuyruklar ve varsayılan sözlükler.",
+      "High-performance container datatypes: counters, double-ended queues, and default dictionaries."
     ],
     analogy: [
       "Python'un standart `list` ve `dict` yapıları düz mutfak bıçakları gibidir. `collections` ise profesyonel şef takım çantasıdır: `Counter` gelen siparişleri otomatik çetele tutar, `deque` dönen bir sushi bandı gibi eski tabakları atıp yenileri ekler, `defaultdict` ise olmayan kutuyu aradığında 'kutuyu bulamadım' diye bağırmak yerine o an senin için temiz bir kutu açar.",

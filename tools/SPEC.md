@@ -1,7 +1,7 @@
-# PyAtlas — library data spec (READ FULLY before writing a library)
+# PyAtlas - library data spec (READ FULLY before writing a library)
 
 PyAtlas is a read-only, bilingual (Turkish / English), mobile-first PWA that teaches Python libraries to a
-**Turkish learner (basic–intermediate Python) who is taking a cyber-security course**. The learner is intimidated by
+**Turkish learner (basic-intermediate Python) who is taking a cyber-security course**. The learner is intimidated by
 "libraries inside libraries, methods of methods". The goal: after reading a library page they can *use every important
 member confidently*, for **general programming** and for **cyber security (defensive + ethical-lab)**.
 
@@ -9,28 +9,28 @@ Project root: `C:\Users\TOSHIBA\Desktop\pyküt`. You create **only** your assign
 (plus nothing else). Do not edit app code, manifest, or other people's libs.
 
 ## Quality bar (this is the whole point)
-1. **Technically flawless.** Every claim, signature, default, exception, return type must be correct for CPython 3.9–3.13.
+1. **Technically flawless.** Every claim, signature, default, exception, return type must be correct for CPython 3.9-3.13.
    If unsure, check the real behaviour by running Python (venv below) or `help()`. If a feature needs 3.10+/3.12+, say so in `gotcha`.
-2. **Complete coverage.** Cover every public member a learner will realistically meet (typically 25–60 members for rich
+2. **Complete coverage.** Cover every public member a learner will realistically meet (typically 25-60 members for rich
    libraries; fewer only if the library is small). Include classes, their methods/attributes, functions, constants (the
    "special lists": e.g. AF_*/SOCK_* families, flags, exceptions, enums), keywords/operators where relevant.
    Group them in logical `sections` (e.g. "Creating", "Connecting", "Options & constants", "Exceptions", "Helpers").
-3. **Teach, don't dump.** Each member: one-line `sum`, then `desc` (2–5 sentences, plain language, the "why/when", mental model),
+3. **Teach, don't dump.** Each member: one-line `sum`, then `desc` (2-5 sentences, plain language, the "why/when", mental model),
    `params` (every parameter, with meaning + typical value), `ret`, at least one **runnable example with exact output**.
    Use `gotcha` for traps/common errors/version notes, and `cyber` for security relevance (defensive use, how attackers abuse it,
    how to detect/mitigate). Add `cyber` to every member where it is genuinely meaningful (don't force it).
 4. **Concrete & memorable.** Library-level `analogy` (a real-world metaphor), small realistic examples, `recipes` (mini programs
-   combining members: 3–6 per library, at least one cyber-flavoured when the library is relevant), and `cards` (5–10 recall questions).
+   combining members: 3-6 per library, at least one cyber-flavoured when the library is relevant), and `cards` (5-10 recall questions).
 5. **Ethics.** Cyber content is defensive / ethical-lab only: log parsing, hash verification, port checks on `127.0.0.1`/own lab,
    packet *crafting/sniffing explained against loopback or pcap files*, secure coding, detection ideas. No malware, no exploits, no
    credential-guessing against real hosts, no evasion. Mention authorization/legal notes where a technique could be misused.
 6. **Natural bilingual text.** Turkish must read like a friendly human teacher (not machine translated), keep technical terms in English
    where Turkish learners actually use them (socket, thread, hash, payload, buffer…), with a Turkish explanation the first time.
    English must be fluent and idiomatic. Both versions carry the same information.
-7. **Tone:** warm, confident, motivating, concise. The learner has been away from Python for a while — never condescending.
+7. **Tone:** warm, confident, motivating, concise. The learner has been away from Python for a while - never condescending.
 
 ## File format
-`data/libs/<id>.js` — an IIFE calling `PY.addLib({...})` exactly **once**. Skeleton:
+`data/libs/<id>.js` - an IIFE calling `PY.addLib({...})` exactly **once**. Skeleton:
 
 ```js
 (function () {
@@ -38,7 +38,7 @@ Project root: `C:\Users\TOSHIBA\Desktop\pyküt`. You create **only** your assign
   PY.addLib({
     id: "socket",                 // = file name, lowercase (may contain dots: "http.server")
     name: "socket",               // display name
-    sym: "sk",                    // 1–3 char monogram for the tile (optional)
+    sym: "sk",                    // 1-3 char monogram for the tile (optional)
     color: "#6366f1",             // accent colour, #rrggbb, mid-saturation, must look good on dark + light backgrounds
     focus: "cyber",               // "general" | "cyber" | "both"
     level: 2,                     // 1 basic, 2 intermediate, 3 advanced
@@ -94,7 +94,7 @@ Every comment in Python code must carry both languages, separated by ` ||| `:
 Do NOT put `|||` anywhere else.
 
 ### Text rules
-- Write all `["tr","en"]` text in **double-quoted JS strings**. Backticks for inline code work directly. Do not put raw `"` inside —
+- Write all `["tr","en"]` text in **double-quoted JS strings**. Backticks for inline code work directly. Do not put raw `"` inside -
   use “curly quotes” or escape `\"`. Apostrophes are fine. Never write `${`.
 - Rich text: `` `code` ``, `**bold**`, blank line (`\n\n`) = new paragraph, lines starting with `- ` = bullet list. No HTML, no markdown links/headings.
 - Be generous with detail but keep each `desc` focused. Prefer several small members over one giant one.
@@ -105,10 +105,10 @@ Do NOT put `|||` anywhere else.
 - Deterministic and offline: no real internet, no `input()`, no sleeping > 1 s, no randomness unless seeded, no timestamps/paths/PIDs
   in output. Use `tempfile`, loopback `127.0.0.1` with port `0`, in-memory objects, `threading` for client/server pairs.
 - If an example truly cannot be deterministic or runnable (needs network, root, a real SSH server, interactive use), set `nocheck: true`
-  (the code is then only syntax-checked) and provide an illustrative `out`. Use this sparingly — **most examples must be verified**.
+  (the code is then only syntax-checked) and provide an illustrative `out`. Use this sparingly - **most examples must be verified**.
 - Python 3.9+ compatible syntax unless the point is a newer feature (note it in `gotcha`).
 - Examples should be short (≤ ~15 lines) for members, up to ~40 lines for recipes. Print results so the learner *sees* what happens.
-- Third-party libs (`requests`, `scapy`, `paramiko`, `cryptography`) are installed in the venv — verify against their real behaviour.
+- Third-party libs (`requests`, `scapy`, `paramiko`, `cryptography`) are installed in the venv - verify against their real behaviour.
   For `requests`, spin up a local `http.server` thread on 127.0.0.1 inside the example to make it verifiable.
 
 ## Tools (run from the project root)
@@ -120,8 +120,8 @@ node tools/validate.mjs <id> [<id> ...]            # schema + translation sanity
 <venv python> tools/run_examples.py <id> [<id> ...]   # SAME ids/order as above; executes all examples, must show FAIL=0
 ```
 Iterate until both are clean. Also test tricky facts interactively (`python -c ...`) instead of trusting memory.
-Windows note: examples run on Windows here but readers use any OS — avoid OS-specific output; if a behaviour differs per OS, say so in `gotcha`.
+Windows note: examples run on Windows here but readers use any OS - avoid OS-specific output; if a behaviour differs per OS, say so in `gotcha`.
 
 ## Reference of finished quality
-`data/libs/socket.js` (written by the lead) is the quality reference once it exists — read it for depth/tone if present.
+`data/libs/socket.js` (written by the lead) is the quality reference once it exists - read it for depth/tone if present.
 

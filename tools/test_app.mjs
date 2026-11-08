@@ -7,10 +7,10 @@ const ROOT = process.cwd();
 let failed = 0;
 function assert(cond, msg) {
   if (!cond) {
-    console.error(`❌ FAIL: ${msg}`);
+    console.error(`[FAIL] ${msg}`);
     failed++;
   } else {
-    console.log(`✅ PASS: ${msg}`);
+    console.log(`[PASS] ${msg}`);
   }
 }
 
@@ -126,9 +126,9 @@ assert(PY.paths.length === 5, `Paths registers 5 learning tracks (got: ${PY.path
 
 console.log(`\n========================================`);
 if (failed === 0) {
-  console.log('🎉 ALL INTEGRITY TESTS PASSED WITH 0 ERRORS!');
+  console.log('[SUCCESS] ALL INTEGRITY TESTS PASSED WITH 0 ERRORS!');
   process.exit(0);
 } else {
-  console.error(`💥 ${failed} INTEGRITY TESTS FAILED!`);
+  console.error(`[ERROR] ${failed} INTEGRITY TESTS FAILED!`);
   process.exit(1);
 }

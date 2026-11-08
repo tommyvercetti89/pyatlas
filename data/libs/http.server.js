@@ -11,8 +11,8 @@
     cat: "network",
     docs: "https://docs.python.org/3/library/http.server.html",
     tagline: [
-      "Dahili HTTP sunucusu — yerel test dinleyicileri, OAST callback yakalama ve hafif bal küpü (honeypot).",
-      "Built-in HTTP server — local test listeners, OAST callback inspection, and lightweight honeypots."
+      "Dahili HTTP sunucusu: yerel test dinleyicileri, OAST callback yakalama ve hafif bal küpü (honeypot).",
+      "Built-in HTTP server: local test listeners, OAST callback inspection, and lightweight honeypots."
     ],
     analogy: [
       "`requests` ve `urllib` restorandaki müşteri gibidir: sipariş verir (istek gönderir) ve yemeği bekler. `http.server` ise siparişi karşılayan şef ve garsonun kendisidir: kapıyı açar, gelen istekleri dinler ve istemciye HTTP durum kodu ve HTML/JSON yanıtı döner.",

@@ -11,8 +11,8 @@
     cat: "concurrency",
     docs: "https://docs.python.org/3/library/concurrent.futures.html",
     tagline: [
-      "Yüksek seviyeli eşzamanlılık — iş parçacığı havuzu (ThreadPool) ve çoklu işlemci (ProcessPool) ile hızlı tarayıcılar.",
-      "High-level concurrency — thread and process worker pools for ultra-fast scanners and multi-core auditing."
+      "Yüksek seviyeli eşzamanlılık: iş parçacığı havuzu (ThreadPool) ve çoklu işlemci (ProcessPool) ile hızlı tarayıcılar.",
+      "High-level concurrency: thread and process worker pools for ultra-fast scanners and multi-core auditing."
     ],
     analogy: [
       "`threading` ve `multiprocessing` sana tek tek fabrika işçileri verir; her işçinin mesaisini, dinlenmesini ve kaza anını tek tek yönetmen gerekir. `concurrent.futures` ise işçi taşeronu (havuz) gibidir: 'Elimde 1000 tane taranacak port var, bana 50 kişilik bir ekip kur ve işi biten sonucu masama koysun' dersin. Ekip yöneticisi işleri dağıtır, sonuçları `as_completed` ile bitiş sırasına göre sana teslim eder.",

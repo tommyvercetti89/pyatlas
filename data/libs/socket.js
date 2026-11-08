@@ -20,8 +20,8 @@
     ],
     intro: [
       [
-        "`socket` modülü, Berkeley Soket API'sini doğrudan Python'a taşır. İnternet üzerindeki her şey—web siteleri, veri tabanı bağlantıları, SSH, oyun sunucuları—arka planda birer soket üzerinde çalışır.",
-        "The `socket` module provides direct access to the Berkeley socket API in Python. Everything across the Internet—websites, databases, SSH, game servers—operates over sockets under the hood."
+        "`socket` modülü, Berkeley Soket API'sini doğrudan Python'a taşır. İnternet üzerindeki her şey (web siteleri, veri tabanı bağlantıları, SSH, oyun sunucuları) arka planda birer soket üzerinde çalışır.",
+        "The `socket` module provides direct access to the Berkeley socket API in Python. Everything across the Internet (websites, databases, SSH, game servers) operates over sockets under the hood."
       ],
       [
         "Siber güvenlikte soketler vazgeçilmezdir: port tarayıcılar (port scanner), servis afişi yakalayıcılar (banner grabber), yerel honeypot'lar veya basit istemci-sunucu denemeleri tamamen bu modülle yazılır.",

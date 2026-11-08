@@ -11,8 +11,8 @@
     cat: "basics",
     docs: "https://docs.python.org/3/library/itertools.html",
     tagline: [
-      "Verimli döngüler ve kombinatoryal üreteçler — kelime listeleri, brute-force simülasyonları ve bellek tasarrufu.",
-      "Fast, memory-efficient looping and combinatorial generators — wordlists, brute-force simulations, and streaming."
+      "Verimli döngüler ve kombinatoryal üreteçler: kelime listeleri, brute-force simülasyonları ve bellek tasarrufu.",
+      "Fast, memory-efficient looping and combinatorial generators: wordlists, brute-force simulations, and streaming."
     ],
     analogy: [
       "10 milyon olası parolayı bir listeye doldurmaya çalışırsan bilgisayarın RAM'i hemen tükenir ve çöker. `itertools` ise bir fabrika bandı (üreteç) gibidir: Parolaları bellekte saklamaz; sen 'sıradakini ver' dedikçe anında bir sonrakini hesaplayıp verir. Bellek kullanımı her zaman sıfıra yakındır.",

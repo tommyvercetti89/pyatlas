@@ -11,8 +11,8 @@
     cat: "basics",
     docs: "https://docs.python.org/3/library/datetime.html",
     tagline: [
-      "Tarih, saat ve süre aritmetiği — log ayrıştırma, zaman damgası analizi ve oturum süre sınırları.",
-      "Date, time, and duration arithmetic — log parsing, timestamp analysis, and session expiration."
+      "Tarih, saat ve süre aritmetiği: log ayrıştırma, zaman damgası analizi ve oturum süre sınırları.",
+      "Date, time, and duration arithmetic: log parsing, timestamp analysis, and session expiration."
     ],
     analogy: [
       "`time` modülü zamanı sadece kayan bir saniye sayacı (1700000000 gibi tek bir float sayı) olarak görür. `datetime` ise o saniyeyi duvardaki takvim ve koldaki saate çevirir: Yıl, Ay, Gün, Saat, Dakika ve Saat Dilimi. İki tarih arasındaki gün farkını hesaplar ya da bir log kaydındaki `'10/Oct/2026:14:00:00'` metnini takvim nesnesine dönüştürür.",

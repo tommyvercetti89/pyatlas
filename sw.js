@@ -1,5 +1,5 @@
-/* PyAtlas Service Worker — Full Offline PWA Support */
-const CACHE_NAME = 'pyatlas-v1.2.0';
+/* PyAtlas Service Worker: Full Offline PWA Support */
+const CACHE_NAME = 'pyatlas-v1.3.0';
 
 const PRECACHE_ASSETS = [
   './',

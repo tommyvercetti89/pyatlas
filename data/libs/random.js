@@ -11,8 +11,8 @@
     cat: "basics",
     docs: "https://docs.python.org/3/library/random.html",
     tagline: [
-      "Rastgele sayılar, seçimler ve karıştırma — oyunlar, simülasyonlar ve test verisi için (güvenlik için DEĞİL).",
-      "Random numbers, picks and shuffles for games, simulations and test data — but NOT for security.",
+      "Rastgele sayılar, seçimler ve karıştırma: oyunlar, simülasyonlar ve test verisi için (güvenlik için DEĞİL).",
+      "Random numbers, picks and shuffles for games, simulations and test data: but NOT for security.",
     ],
     analogy: [
       "`random` bir zar torbası gibi: içinden zar atar, kart çeker, desteyi karıştırırsın. Ama zarlar aslında çok karmaşık bir tarifle (formülle) üretilir; tarifin başlangıç noktasını (seed) bilen biri bütün zar sonuçlarını önceden söyleyebilir. Kumar masasında eğlenceli, kasa şifresi için tehlikeli.",
@@ -849,7 +849,7 @@ print("predicted next 1000 outputs:", ok)`,
       {
         id: "randint-vs-randrange",
         q: ["`randint(1, 6)` ile `randrange(1, 6)` arasındaki fark nedir?", "What is the difference between `randint(1, 6)` and `randrange(1, 6)`?"],
-        a: ["`randint` üst sınırı dahil eder (1–6); `randrange` dahil etmez (1–5).", "`randint` includes the upper bound (1–6); `randrange` excludes it (1–5)."],
+        a: ["`randint` üst sınırı dahil eder (1-6); `randrange` dahil etmez (1-5).", "`randint` includes the upper bound (1-6); `randrange` excludes it (1-5)."],
       },
       {
         id: "shuffle-none",
