@@ -41,7 +41,7 @@
     eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
   };
   const ic = (n, cls = '') =>
-    `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n] || ''}</svg>`;
+    `<svg class="ic ${cls}" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n] || ''}</svg>`;
 
   /* ---------- small view helpers ---------- */
   const trim = (x) => String(x).replace(/^\n+|\n+$/g, '');
@@ -215,8 +215,10 @@
     <section class="page-h reveal"><h1>${esc(s('libs.title'))}</h1><p>${esc(s('libs.sub', { n: PY.libs.length }))}</p></section>
     <div class="toolbar reveal">
       <label class="filter-search">${ic('search')}<input id="lib-q" type="search" value="${esc(ui.q)}" placeholder="${esc(s('libs.filter.ph'))}" autocomplete="off"></label>
-      <div class="fgroup" role="group">${chip('focus', 'all', s('f.all'))}${chip('focus', 'general', s('f.general'))}${chip('focus', 'cyber', s('f.cyber'))}</div>
-      <div class="fgroup" role="group">${chip('src', 'all', s('f.all'))}${chip('src', 'std', s('src.std'))}${chip('src', 'ext', s('src.ext'))}</div>
+      <div class="toolbar-filters">
+        <div class="fgroup" role="group">${chip('focus', 'all', s('f.all'))}${chip('focus', 'general', s('f.general'))}${chip('focus', 'cyber', s('f.cyber'))}</div>
+        <div class="fgroup" role="group">${chip('src', 'all', s('f.all'))}${chip('src', 'std', s('src.std'))}${chip('src', 'ext', s('src.ext'))}</div>
+      </div>
     </div>
     <div class="libgrid" id="libgrid">${libsGrid()}</div>
     ${footer()}`;
