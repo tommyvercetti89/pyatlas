@@ -1,140 +1,135 @@
-# PyAtlas: Python & Siber Güvenlik Kütüphane Atlası (PWA)
+# PyAtlas: Python ve Siber Güvenlik Kütüphane Atlası
 
-> **GitHub Pages Uyumlu, Çevrimdışı Çalışabilen (PWA), Aralıklı Tekrar (SM-2) ve İki Dilli (TR / EN) İnteraktif Kütüphane Rehberi.**
+PyAtlas, Python programlama dilinin standart ve temel üçüncü parti kütüphanelerini, metotlarını ve fonksiyonlarını adım adım somutlaştırarak öğreten; hem genel yazılım geliştirme hem de savunmacı siber güvenlik (defensive cyber security) pratiklerini tek çatı altında sunan modern, interaktif ve çevrimdışı çalışabilen bir Progressive Web App (PWA) platformudur.
 
----
-
-## Neden PyAtlas?
-
-Python öğrenirken veya siber güvenlik lablarına girerken en büyük engel şudur: **Kütüphaneler ve metotların metotları** ("methods of methods") gözde büyür, karmaşıklaşır ve pratik yapmadıkça unutulur.
-
-**PyAtlas**, Python standart kütüphanelerini ve temel siber güvenlik araçlarını;
-1. **Somut Zihinsel Modeller ve Metaforlar** (Analojiler),
-2. **Çalıştırılmış ve Doğrulanmış Örnek Kodlar** (%100 Deterministic Testler),
-3. **Siber Güvenlik / Savunma / Ethical-Lab İpuçları**,
-4. **Hafızada Kalıcı Kılan Aralıklı Tekrar Kartları (SuperMemo SM-2 Algoritması)**
-ile tane tane öğreterek akılda kalıcı hale getirir.
+- Canlı Uygulama: https://tommyvercetti89.github.io/pyatlas/
+- GitHub Deposu: https://github.com/tommyvercetti89/pyatlas
 
 ---
 
-## Özellikler
+## Temel Özellikler
 
-- **Mobil & Masaüstü PWA:** Telefona tek tıkla uygulama gibi yüklenir (`manifest.webmanifest`, `ServiceWorker`), uçak modunda ve çevrimdışı tamamen çalışır.
+- **Mobil ve Masaüstü PWA:** W3C Manifest ve Service Worker (`pyatlas-v1.5.0`) ile tarayıcı üzerinden doğrudan telefona veya bilgisayara yerel bir uygulama gibi kurulabilir. İnternet bağlantısı olmaksızın (offline-first) 58 varlığın tamamıyla bağımsız çalışır.
+- **Çift Odaklı Öğretim Modeli:** Her kütüphane ve metot için hem günlük yazılım geliştirme ("Genel Kodlama") hem de siber güvenlik / lab kullanım senaryoları ("Siber Güvenlik") ayrı ayrı ele alınır.
+- **Aralıklı Tekrar Sistemi (SM-2 Spaced Repetition):** SuperMemo ve Anki algoritmalarını temel alan kart sistemi ile öğrenilen fonksiyonların kalıcı hafızaya aktarılmasını sağlar. Kolaylık dereceleri, inceleme kuyruğu ve günlük tekrar takip mekanizması mevcuttur.
 - **3 Dinamik Tema:** 
-  - **Dark (Karanlık):** OLED dostu, göz yormayan derin gri/siyah.
-  - **Purple (Cyber Neon):** Siber güvenlik ve fütüristik mor/neon estetiği.
-  - **Light (Açık):** Gündüz ortamları için yüksek kontrastlı net okuma modu.
-- **Anında İki Dilli Destek (TR TR / EN EN):** Arayüz, açıklamalar ve kod yorumları (`# tr ||| en`) tek tuşla anında dilden dile dönüşür.
-- **Aralıklı Tekrar (SM-2 Spaced Repetition):** Anki ve SuperMemo algoritmalarıyla çalışan bilgi kartları (flashcards). Hatırlama zorluğuna göre (1: Tekrar, 2: Zor, 3: İyi, 4: Kolay) kartları ideal günlerde tekrar karşına çıkarır.
-- **Defensive & Ethical Lab Odaklı:** Port tarama, banner yakalama, log inceleme, zamanlama saldırısı savunması, token yönetimi, paket ayrıştırma ve formül enjeksiyonu koruması.
-- **Sıfır Derleme (Zero Build Step):** Vanilla HTML5, CSS3 ve ES6. GitHub Pages veya herhangi bir statik sunucuda anında çalışır.
-- **Canlı Arama & Kısayol (`/`):** İstediğin metodu veya kütüphaneyi klavyeden `/` tuşuna basarak anında bul.
+  - Dark (Varsayılan): OLED uyumlu derin obsidyen ve siber renk paleti.
+  - Purple (Cyber Neon): Fütüristik mor ve neon camgöbeği estetiği.
+  - Light (Açık): Yüksek kontrastlı, temiz editoryal okuma modu.
+- **Anında İki Dilli Altyapı (TR / EN):** Arayüz butonlarından kütüphane dokümantasyonuna, metot parametrelerinden kod bloklarındaki yorum satırlarına kadar tüm içerik sayfa yenilenmeden milisaniyeler içinde Türkçe ve İngilizce arasında dönüşür.
+- **Sıfır Derleme Adımı (Zero Build Step):** Karmaşık derleyicilere, paketleyicilere veya Node çalışma zamanı bağımlılıklarına ihtiyaç duyulmaz. Saf Vanilla HTML5, CSS3 ve ES6 ile hazırlanmıştır.
+- **Canlı Kod Arama ve Klavye Kısayolları:** `/` veya `Ctrl+K` ile 34 kütüphane ve 300'ü aşkın metot arasında gerçek zamanlı arama yapılabilir.
 
 ---
 
-## Kapsanan Kütüphaneler (34 Flagship Modül)
+## Kapsanan Kütüphaneler (34 Amiral Modül)
 
-### 1. Temel Sistem & Dosya Yönetimi (Basics & Files)
-- **`builtins`**: Python dahili fonksiyonları (`len`, `zip`, `enumerate`, `isinstance`, `map`, `filter`, `open`, vb.)
-- **`sys`**: Python yorumlayıcı ve işletim sistemi köprüsü (`argv`, `exit`, `stdin/stdout`, `platform`, `byteorder`)
-- **`os`**: Düşük seviyeli sistem çağrıları (`environ`, `system`, `urandom`, `walk`, dosya izinleri)
-- **`pathlib`**: Modern nesne yönelimli dosya ve dizin yönetimi (`Path`, `glob`, `resolve`, traversal savunması)
-- **`shutil`**: Yüksek seviyeli kopyalama (`copy2` adli bilişim zaman koruması, `copytree`, `rmtree`, `which`)
+### 1. Temel Dil ve Sistem
+- `builtins`: Dahili fonksiyonlar, temel veri tipleri ve hata hiyerarşisi
+- `sys`: Yorumlayıcı parametreleri, sistem yolları ve akış kontrolü
+- `os`: İşletim sistemi arabirimi, dosya yönetimi ve süreç ortamı
+- `pathlib`: Nesne yönelimli dosya yolu yönetimi
+- `shutil`: Yüksek seviyeli dosya, dizin ve arşiv işlemleri
 
-### 2. Metin, Veri & Veritabanı (Text, Data & Database)
-- **`re`**: Düzenli ifadeler (Regex) ile log ayrıştırma, IP/E-posta doğrulama ve arama
-- **`json`**: Web API ve SIEM log serileştirme (`dumps`, `loads`, `indent`)
-- **`csv`**: Zafiyet raporlama, pentest bulguları ve CSV Formül Enjeksiyonu savunması
-- **`sqlite3`**: SQL sorguları, veritabanı saldırılarına karşı parametreli sorgu savunması (`?`)
-- **`datetime`**: UTC zaman damgaları, log zaman çizelgesi (timeline) ve oturum süre sınırları (`timedelta`)
-- **`time`**: Düşük seviyeli sayaçlar, `sleep` ile dalgalı IDS atlatma ve `perf_counter` zamanlama analizi
-- **`collections`**: DDoS IP frekans sayacı (`Counter`), hız sınırlayıcı kuyruk (`deque`), `defaultdict`
-- **`itertools`**: Parola brute-force simülatörü (`product`), kelime listesi akıtma (`chain`), proxy döngüsü (`cycle`)
-- **`random`**: Simülasyon ve test verisi (ve neden güvenlikte kullanılmaması gerektiği)
-- **`secrets`**: Kriptografik güvenli rastgelelik (parola, token, OTP, CSPRNG)
+### 2. Metin, Veri ve Otomasyon
+- `re`: Düzenli ifadeler (RegEx), log ve girdi ayrıştırma
+- `json`: JSON serileştirme ve API veri alışverişi
+- `csv`: Tablosal veri analizi ve raporlama
+- `sqlite3`: Sıfır konfigürasyonlu yerel SQL veritabanı motoru
+- `datetime`: Zaman damgası aritmetiği, süre analizi ve oturum kontrolleri
+- `time`: Düşük seviyeli sistem saati ve gecikme yönetimi
+- `collections`: Gelişmiş veri yapıları (Counter, deque, defaultdict)
+- `itertools`: Yüksek performanslı döngü üreteçleri ve kombinatorik araçlar
+- `random`: İstatiksel sahte-rastgele sayı üreteci (PRNG)
+- `secrets`: Kriptografik güvenli rastgele sayı ve token üretimi (CSPRNG)
+- `argparse`: Profesyonel CLI argüman ayrıştırma arabirimi
+- `logging`: Kurumsal loglama, denetim izi ve hata takibi
 
-### 3. Araç Geliştirme & Günlük Kaydı (Tooling & Logging)
-- **`argparse`**: Profesyonel CLI argüman ayrıştırma, `--target`, `--port`, alt komutlar (`subparsers`)
-- **`logging`**: Olay müdahale ve güvenlik denetim kayıtları (INFO, WARNING, CRITICAL, dosya ve konsol akışları)
+### 3. Ağ ve İletişim
+- `socket`: Düşük seviyeli Berkeley ağ soketi arabirimi
+- `ipaddress`: IPv4/IPv6 CIDR hesaplama, subnet doğrulama ve IP analizi
+- `struct`: İkili (binary) paket ve ağ protokol başlığı paketleme/çözme
+- `ssl`: TLS şifreleme, sertifika doğrulama ve güvenli kanal kurma
+- `urllib`: Standart HTTP istemcisi ve URL ayrıştırma
+- `http.server`: Dahili HTTP dinleyicisi ve honeypot prototipi
+- `requests`: Modern, ergonomik HTTP istemcisi (üçüncü parti)
+- `scapy`: Paket manipülasyonu, koklama (sniffing) ve analiz (üçüncü parti)
+- `paramiko`: SSHv2 istemci ve sunucu otomasyonu (üçüncü parti)
 
-### 4. Ağ & Web Programlama (Network & Web)
-- **`socket`**: TCP/UDP istemci/sunucu mimarisi, port tarayıcı, af_inet soketleri
-- **`ipaddress`**: CIDR blokları, özel/genel IP filtreleme, alt ağ denetimi
-- **`struct`**: Ağ paket başlıkları, ikili veri paketleme/açma (`pack`, `unpack`)
-- **`ssl`**: TLS el sıkışması, sertifika analizi (`getpeercert`), Ortadaki Adam (MITM) savunması
-- **`urllib`**: Standart kütüphane HTTP istemcisi, URL parse ve Open Redirect güvenlik doğrulaması
-- **`http.server`**: Yerel test sunucusu, OAST / SSRF callback dinleyicisi, hafif bal küpü (honeypot)
-- **`requests`**: Modern HTTP istemcisi, API istekleri, özel başlıklar, zaman aşımları
-- **`scapy`**: İkili paket koklama (sniffing), paket üretme, SYN taraması, PCAP analizi
-- **`paramiko`**: SSHv2 istemcisi, güvenli komut çalıştırma, SFTP dosya transferi, Ed25519 anahtarları
+### 4. Kriptografi ve Kodlama
+- `hashlib`: SHA-256, SHA-3, MD5 ve PBKDF2 kriptografik özetleme
+- `hmac`: Mesaj doğrulama kodu ve zamanlama saldırılarına karşı güvenli kontrol
+- `base64`: RFC 4648 ikili veri kodlama ve taşıma formatı
+- `binascii`: Hex, Base64 ve düşük seviyeli ikili dönüşümler
+- `cryptography`: Endüstri standardı simetrik ve asimetrik şifreleme (üçüncü parti)
 
-### 5. Kriptografi & Kodlama (Crypto & Encoding)
-- **`hashlib`**: MD5, SHA-256, SHA-512, salting, gökkuşağı tablosu savunması
-- **`hmac`**: Gizli anahtarlı mesaj doğrulama, webhook imzaları ve `compare_digest` zamanlama kalkanı
-- **`base64`**: Binary veriyi ASCII'ye çevirme, URL-safe Base64, padding
-- **`binascii`**: C hızında hex ve binary çevirisi, CRC32 sağlama, shellcode hexdump analizi
-- **`cryptography`**: Fernet kimlik doğrulamalı simetrik şifreleme, AES-GCM, RSA anahtar üretimi, PBKDF2
-
-### 6. Eşzamanlılık & Paralel Çalışma (Concurrency)
-- **`subprocess`**: Sistem komutları çalıştırma (`run`), boru hatları (`PIPE`), Shell Injection savunması
-- **`threading`**: Çok iş parçacıklı port tarama, kilitler (`Lock`), olaylar (`Event`)
-- **`concurrent.futures`**: `ThreadPoolExecutor` ile yüksek hızlı tarayıcılar, `as_completed` canlı akış
+### 5. Süreçler ve Eşzamanlılık
+- `subprocess`: Alt süreç başlatma, komut çalıştırma ve boru hattı (pipeline)
+- `threading`: İş parçacığı yönetimi ve bellek içi eşzamanlılık
+- `concurrent.futures`: ThreadPoolExecutor ve ProcessPoolExecutor ile yüksek seviyeli asenkron tarayıcılar
 
 ---
 
-## Yerel Olarak Çalıştırma
+## Yapılandırılmış Öğrenme Rotaları (Learning Tracks)
 
-Projeyi bilgisayarınızda yerel olarak açmak için herhangi bir HTTP sunucusu yeterlidir:
+1. **Python'a Geri Dön (Refresh):** Temel tipler, dosya işlemleri, veri yapıları ve metin işleme ile hızlı ısınma turu.
+2. **Siber Güvenlik Temeli (Cyber Core):** Sistem keşfi, alt süreçler, ikili veri dönüşümleri ve güvenli token mantığı.
+3. **Ağ Savunması (Network Defense):** Düşük seviyeli soket programlama, paket yakalama, port tarama ve SSH otomasyonu.
+4. **Veri ve Log Analizi (Data & Log Analysis):** Olay müdahale (incident response) odaklı log regex filtreleme, zaman analizi ve SQLite korelasyonu.
+5. **Kripto Lab (Crypto Lab):** Simetrik/asimetrik şifreleme, dijital imza, HMAC ve parola türetme fonksiyonları (KDF).
+
+---
+
+## Mimari ve Teknik Standartlar
+
+- **Vanilla Stack:** Harici JavaScript çatısı (React, Vue, Angular) kullanılmaz. Tarayıcıların yerel Web API'leri doğrudan çalışır.
+- **İzole Veri Modeli:** Her kütüphane `data/libs/<id>.js` altında kendi IIFE kapsamı içinde tanımlanır.
+- **Güvenli Olay Delegasyonu:** DOM tıklamaları küresel `data-act` mimarisiyle yönetilir; dinamik arayüz elemanlarında bellek sızıntısı ve dinleyici kopukluğu oluşmaz.
+- **CSS Değişken Mimarisi:** Renkler, yazı boyutları ve radius değerleri CSS Custom Properties (`--var`) ile yönetilir.
+- **Güvenli Alan (Safe Area Insets):** Modern mobil cihazlardaki kamera çentikleri ve alt çubuklar için `env(safe-area-inset-top)` ve `env(safe-area-inset-bottom)` kuralları tam desteklenir.
+
+---
+
+## Yerel Kurulum ve Çalıştırma
+
+Projeyi yerel bilgisayarınızda çalıştırmak için herhangi bir paket kurucusu gerekmez. Proje dizininde yerel bir HTTP sunucusu başlatmak yeterlidir:
 
 ```bash
-# Proje klasörüne girin:
-cd pyküt
+# Python ile:
+python -m http.server 8000
 
-# Python dahili sunucusunu başlatın:
-python -m http.server 8080
+# veya Node.js ile:
+npx serve .
 ```
 
-Tarayıcınızda açın:
-**`http://localhost:8080`**
+Tarayıcınızda `http://localhost:8000` adresine giderek uygulamayı doğrudan kullanabilirsiniz.
 
 ---
 
-## GitHub Pages'e Yükleme (Adım Adım)
+## Test ve Doğrulama
 
-1. GitHub'da yeni bir repository (depo) oluşturun (örneğin: `pyatlas`).
-2. Proje dizininde terminalden şu komutları çalıştırın:
+Kod kalitesi, doğruluğu ve bütünlüğü otomatik test betikleriyle doğrulanmaktadır:
 
-```bash
-git add .
-git commit -m "feat: complete PyAtlas 34 flagship libraries with SM-2 spaced repetition and PWA"
-git branch -M main
-git remote add origin https://github.com/<kullanici-adiniz>/pyatlas.git
-git push -u origin main
-```
+1. **Uygulama ve Buton Bütünlüğü:**
+   ```bash
+   node tools/test_app.mjs
+   ```
+   Tüm DOM elemanlarını, 20 adet `data-act` buton işleyicisini, Service Worker önbelleğini ve TR/EN çeviri anahtarlarını doğrular.
 
-3. GitHub Repository sayfanızda:
-   - **Settings** (Ayarlar) -> **Pages** sekmesine gidin.
-   - **Branch** olarak `main` ve klasör olarak `/ (root)` seçin.
-   - **Save** butonuna tıklayın.
-4. Birkaç saniye içinde siteniz yayına alınacaktır:
-   **`https://<kullanici-adiniz>.github.io/pyatlas/`**
+2. **Kütüphane Şema ve Çapraz Referans Doğrulaması:**
+   ```bash
+   node tools/validate.mjs
+   ```
+   34 kütüphanenin şemasını, metot imzalarını, kartlarını ve çift yönlü bağlantılarını denetler.
 
----
-
-## Test ve Doğrulama Araçları
-
-Projeye dahil edilen test araçları tüm kod örneklerinin çalışabilirliğini doğrular:
-
-```bash
-# Tüm kütüphanelerin sözdizimini, çift dilli açıklamalarını ve kartlarını doğrula:
-node tools/validate.mjs
-
-# Tüm kütüphanelerdeki 368+ kod örneğini gerçek Python üzerinde çalıştırıp doğrula:
-python tools/run_examples.py
-```
+3. **Gerçek Python Örneklerinin Yürütülmesi:**
+   ```bash
+   python tools/run_examples.py
+   ```
+   Kütüphane dokümantasyonunda yer alan 371 adet Python kod örneğinin tamamını alt süreçlerde izole çalıştırarak beklenen çıktıları (`out`) doğrular.
 
 ---
 
 ## Lisans
-Bu proje eğitim ve etik siber güvenlik araştırmaları için MIT lisansı altında hazırlanmıştır.
 
+Bu proje MIT lisansı kapsamında sunulmaktadır.

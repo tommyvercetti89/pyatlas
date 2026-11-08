@@ -5,7 +5,7 @@ PyAtlas is a read-only, bilingual (Turkish / English), mobile-first PWA that tea
 "libraries inside libraries, methods of methods". The goal: after reading a library page they can *use every important
 member confidently*, for **general programming** and for **cyber security (defensive + ethical-lab)**.
 
-Project root: `C:\Users\TOSHIBA\Desktop\pyküt`. You create **only** your assigned `data/libs/<id>.js` files
+Project root: `<project-root>`. You create **only** your assigned `data/libs/<id>.js` files
 (plus nothing else). Do not edit app code, manifest, or other people's libs.
 
 ## Quality bar (this is the whole point)
@@ -113,7 +113,7 @@ Do NOT put `|||` anywhere else.
 
 ## Tools (run from the project root)
 Python venv with requests, scapy, paramiko, cryptography:
-`C:\Users\TOSHIBA\.gemini\antigravity\brain\00c278b6-9039-48e9-afda-fb8260b90be8\scratch\venv\Scripts\python.exe`
+`<venv-path>/python.exe`
 
 ```
 node tools/validate.mjs <id> [<id> ...]            # schema + translation sanity checks (must show 0 errors; fix warnings when sensible)
