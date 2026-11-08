@@ -1,5 +1,5 @@
 /* PyAtlas Service Worker: Full Offline PWA Support */
-const CACHE_NAME = 'pyatlas-v1.4.0';
+const CACHE_NAME = 'pyatlas-v1.5.0';
 
 const PRECACHE_ASSETS = [
   './',
@@ -18,6 +18,8 @@ const PRECACHE_ASSETS = [
   './icons/apple-touch-icon.png',
   './icons/icon-64.png',
   './icons/favicon.png',
+  './icons/icon-maskable-512.png',
+  './icons/icon-maskable-192.png',
   './fonts/inter-latin-wght-normal.woff2',
   './fonts/inter-latin-ext-wght-normal.woff2',
   './fonts/space-grotesk-latin-wght-normal.woff2',

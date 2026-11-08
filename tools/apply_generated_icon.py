@@ -26,3 +26,4 @@ for filename, sz in sizes:
     print(f"Saved {sz}x{sz} -> {dest}")
 
 print("All PWA icon assets generated successfully!")
+
