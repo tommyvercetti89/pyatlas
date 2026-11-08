@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PyAtlas · Python Kütüphane Atlası</title>
+  <meta name="description" content="Python kütüphanelerini ve metodlarını tane tane öğren: genel kodlama + siber güvenlik. Aralıklı tekrar, 3 tema, TR/EN, PWA. / Learn Python libraries and methods piece by piece.">
+  <meta name="theme-color" content="#0b0e14">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="PyAtlas">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script>
+    /* Apply saved theme + language before first paint (no flash) */
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem('pyatlas.v1') || '{}');
+        var th = s.theme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        var lg = s.lang || ((navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+        var d = document.documentElement;
+        d.setAttribute('data-theme', th); d.lang = lg;
+        d.style.setProperty('--fs', s.font || 1);
+        var c = { light: '#f5f6fb', purple: '#150d2e', dark: '#0b0e14' }[th];
+        document.querySelector('meta[name=theme-color]').setAttribute('content', c || '#0b0e14');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">İçeriğe geç</a>
+  <div class="bg-fx" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><i class="grid-fx"></i></div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#/" aria-label="PyAtlas">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--logo-a)"/><stop offset="1" stop-color="var(--logo-b)"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#lg)"/><path d="M24 21 13 32l11 11M40 21l11 11-11 11" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.6" fill="#fff"/></svg>
+      <span class="brand-name">Py<b>Atlas</b></span>
+    </a>
+    <nav class="topnav" aria-label="Main" id="topnav"></nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="btn-search" data-i18n-aria="search" aria-label="Ara"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><kbd class="kbd">/</kbd></button>
+      <div class="seg" role="group" data-i18n-aria="language" aria-label="Dil">
+        <button data-lang="tr" aria-pressed="false">TR</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+        <i class="seg-pill"></i>
+      </div>
+      <div class="themes" role="group" data-i18n-aria="theme" aria-label="Tema">
+        <button data-theme-btn="light" class="sw sw-light" data-i18n-aria="theme.light" aria-label="Açık" aria-pressed="false"><span></span></button>
+        <button data-theme-btn="purple" class="sw sw-purple" data-i18n-aria="theme.purple" aria-label="Mor" aria-pressed="false"><span></span></button>
+        <button data-theme-btn="dark" class="sw sw-dark" data-i18n-aria="theme.dark" aria-label="Karanlık" aria-pressed="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <nav class="bottomnav" id="bottomnav" aria-label="Main"></nav>
+
+  <div class="search-ov" id="search" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" data-i18n-aria="search" aria-label="Ara">
+      <div class="search-in">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search-input" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" data-i18n-ph="search.ph" placeholder="Kütüphane, metod, sabit ara…">
+        <button class="icon-btn sm" id="search-close" data-i18n-aria="close" aria-label="Kapat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="search-res" id="search-res" role="listbox"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div id="boot" class="boot"><div class="boot-in"><div class="boot-logo"><i></i></div><p>PyAtlas</p></div></div>
+
+  <noscript><p style="padding:2rem;font-family:sans-serif">PyAtlas needs JavaScript. / PyAtlas için JavaScript gerekir.</p></noscript>
+
+  <script src="js/core.js"></script>
+  <script src="js/strings.js"></script>
+  <script src="js/manifest.js"></script>
+  <script src="js/paths.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
